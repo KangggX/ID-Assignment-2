@@ -11,3 +11,7 @@ body {
     background-image: url("img/bg1.jpg");
     background-position: center;
 }
+
+.main .navbar, .navbar .container {
+    transition: all .3s ease;
+}
