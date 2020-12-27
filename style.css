@@ -4,6 +4,8 @@
 
 body {
     font-family: "Segoe UI", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .main {
@@ -15,4 +17,12 @@ body {
 
 .main .navbar, .navbar .container {
     transition: all .3s ease;
+}
+
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+    color: #21D840 !important;
+}
+
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand {
+    color: rgba(255, 255, 255, .9);
 }
