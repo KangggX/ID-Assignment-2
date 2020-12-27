@@ -5,3 +5,9 @@
 body {
     font-family: "Segoe UI", sans-serif;
 }
+
+.main {
+    height: 100vh;
+    background-image: url("img/bg1.jpg");
+    background-position: center;
+}
