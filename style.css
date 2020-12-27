@@ -10,6 +10,7 @@ body {
     height: 100vh;
     background-image: url("img/bg1.jpg");
     background-position: center;
+    background-size: cover;
 }
 
 .main .navbar, .navbar .container {
