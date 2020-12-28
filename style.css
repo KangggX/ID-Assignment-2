@@ -47,13 +47,17 @@ body {
     color: #16a22d !important; /*Overiding JS*/
 }
 
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+    color: ;
+}
+
 .clickable {
     color: #fff;
     padding: 10px 40px;
     background-color: #21D840;
-    border-radius: 20px;
+    border-radius: 10px;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 500;
     transition: all .3s ease;
 }
 
@@ -71,7 +75,7 @@ body {
 }
 
 .point {
-    height: 35vh;
+    height: 40vh;
 }
 
 .point .col-4 {
