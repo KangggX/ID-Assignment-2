@@ -48,7 +48,7 @@ body {
 }
 
 .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
-    color: ;
+    color: inherit;
 }
 
 .clickable {
@@ -75,7 +75,7 @@ body {
 }
 
 .point {
-    height: 40vh;
+    padding: 5rem 0;
 }
 
 .point .col-4 {
@@ -99,8 +99,7 @@ body {
 
 /***** Recipe Form things *****/
 .result {
-    height: calc(100vh - 74px);
-    padding-top: 5rem;
+    padding: 5rem 0;
 }
 
 .recipe-box input, .recipe-box select {
