@@ -102,6 +102,14 @@ body {
     padding: 5rem 0;
 }
 
+.step-header {
+    margin-bottom: 5rem;
+}
+
+.step-header .fs-1 {
+    font-weight: bold;
+}
+
 .recipe-box input, .recipe-box select {
     width: 25rem;
     padding: 0.4rem 0.6rem;
