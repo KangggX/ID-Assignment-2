@@ -30,13 +30,6 @@ body {
     background: #1fb337;
 }
 
-.main {
-    height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("img/bg1.jpg");
-    background-position: center;
-    background-size: cover;
-}
-
 /***** Navigation Bar things *****/
 .main .navbar, .navbar .container {
     transition: all .3s ease;
@@ -63,4 +56,24 @@ body {
 .clickable:hover {
     color: #fff;
     filter: brightness(0.8);
+}
+
+/***** Main *****/
+.main {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("img/bg1.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.point {
+    height: 35vh;
+}
+
+.point .col-4 {
+    padding: 0 6rem;
+}
+
+.point .desc {
+    font-weight: 500;
 }
