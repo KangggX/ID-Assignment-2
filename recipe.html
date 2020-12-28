@@ -38,22 +38,79 @@
         <section class="result text-center">
             <div class="container">
                 <form class="recipe-box">
-                    <input type="text" id="queryname" name="queryname" placeholder="Name (E.g. Pasta)">
+                    <div class="d-flex align-items-center flex-sm-column text-start">
+                        <input type="text" id="queryname" name="queryname" placeholder="Name (E.g. Pasta)">
+                    </div>
+
                     <div class="seperator">OR</div>
+                    <input type="text" id="queryname" name="queryname" placeholder="Ready Time(minutes e.g. 20)(Optional)"><br><br>
+
                     <select name="querycuisine" id="querycuisine">
-                        <option value="African">Volvo</option>
-                        <option value="American">Saab</option>
-                        <option value="British">Opel</option>
-                        <option value="Cajun">Audi</option>
-                        <option value="Carribean">Audi</option>
-                        <option value="Chinese">Audi</option>
-                        <option value="European">Audi</option>
-                        <option value="French">Audi</option>
-                        <option value="German">Audi</option>
-                        <option value="Indian">Audi</option>
-                        <option value="Italian">Audi</option>
-                    </select><br>
-                    <input type="text" id="queryname" name="queryname" placeholder="Name (E.g. Pasta)">
+                        <option value="" disabled selected>Cuisine</option>
+                        <option value="African">African</option>
+                        <option value="American">American</option>
+                        <option value="British">British</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="European">European</option>
+                        <option value="French">French</option>
+                        <option value="German">German</option>
+                        <option value="Indian">Indian</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Jewish">Jewish</option>
+                        <option value="Korean">Korean</option>
+                        <option value="Mexican">Mexican</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="Thai">Thai</option>
+                        <option value="Vietnamese">Vietnamese</option>
+                    </select><br><br>
+
+                    <select name="querytype" id="querytype">
+                        <option value="" disabled selected>Meal Type</option>
+                        <option value="main course">Main Course</option>
+                        <option value="side dish">Side Dish</option>
+                        <option value="dessert">Dessert</option>
+                        <option value="appetizer">Appetizer</option>
+                        <option value="salad">Salad</option>
+                        <option value="bread">Bread</option>
+                        <option value="breakfast">Breakfast</option>
+                        <option value="soup">Soup</option>
+                        <option value="beverage">Beverage</option>
+                        <option value="sauce">Sauce</option>
+                        <option value="marinade">Marinade</option>
+                        <option value="fingerfood">Fingerfood</option>
+                        <option value="snack">Snack</option>
+                        <option value="drink">Drink</option>
+                    </select><br><br>
+
+                    <select name="querydiet" id="querydiet">
+                        <option value="" disabled selected>Diet Choice (Optional)</option>
+                        <option value="Gluten Free">Gluten Free</option>
+                        <option value="Ketogenic">Ketogenic</option>
+                        <option value="Vegetarian">Vegetarian</option>
+                        <option value="Lacto-Vegetarian">Lacto-Vegetarian</option>
+                        <option value="Ovo-Vegetarian">Ovo-Vegetarian</option>
+                        <option value="Vegan">Vegan</option>
+                        <option value="Pescetarian">Pescetarian</option>
+                        <option value="Paleo">Paleo</option>
+                        <option value="Primal">Primal</option>
+                        <option value="Whole30">Whole30</option>
+                    </select><br><br>
+
+                    <select name="queryintolerance" id="queryintolerance">
+                        <option value="" disabled selected>Intolerance (Optional)</option>
+                        <option value="Dairy">Dairy</option>
+                        <option value="Egg">Egg</option>
+                        <option value="Gluten">Gluten</option>
+                        <option value="Grain">Grain</option>
+                        <option value="Peanut">Peanut</option>
+                        <option value="Seafood">Seafood</option>
+                        <option value="Sesame">Sesame</option>
+                        <option value="Shellfish">Shellfish</option>
+                        <option value="Soy">Soy</option>
+                        <option value="Sulfite">Sulfite</option>
+                        <option value="Tree Nut">Tree Nut</option>
+                        <option value="Wheat">Wheat</option>
+                    </select>
                 </form>
             </div>
         </section>
