@@ -78,6 +78,25 @@ body {
     padding: 0 6rem;
 }
 
+.point .title {
+    color: #21D840;
+}
+
 .point .desc {
     font-weight: 500;
+}
+
+.box {
+    min-height: 145px;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 0 20px 0px rgb(0 0 0 / 0.1);
+}
+
+/***** Media Queries *****/
+@media screen and (max-width: 576px) {
+    .box {
+        margin: 1rem auto;
+        max-width: 320px;
+    }
 }
