@@ -36,11 +36,15 @@ body {
 }
 
 .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
-    color: #21D840 !important;
+    color: #21D840 !important; /*Overiding JS*/
 }
 
 .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand {
     color: rgba(255, 255, 255, .9);
+}
+
+.navbar-light .navbar-nav .nav-link:not(.active):focus, .navbar-light .navbar-nav .nav-link:not(.active):hover {
+    color: #16a22d !important; /*Overiding JS*/
 }
 
 .clickable {
