@@ -97,6 +97,44 @@ body {
     box-shadow: 0 0 20px 0px rgb(0 0 0 / 0.1);
 }
 
+/***** Recipe Form things *****/
+.result {
+    height: calc(100vh - 74px);
+    padding-top: 5rem;
+}
+
+.recipe-box input, .recipe-box select {
+    width: 25rem;
+    padding: 0.4rem 0.6rem;
+    line-height: 1.5;
+    color: #212529;
+}
+
+.seperator {
+    display: flex;
+    color: #21D840;
+    margin: 4rem 0;
+    font-weight: bold;
+    font-size: 2rem;
+    justify-content: center;
+}
+
+.seperator::before, .seperator::after {
+    content: '';
+    background-color: #21D840;
+    flex: 0.4 auto;
+    align-self: center;
+    height: 2px;
+}
+
+.seperator::before {
+    margin-right: 2rem;
+}
+
+.seperator::after {
+    margin-left: 2rem;
+}
+
 /***** Media Queries *****/
 @media screen and (max-width: 576px) {
     .box {
