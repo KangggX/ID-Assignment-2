@@ -98,8 +98,12 @@ body {
 }
 
 /***** Recipe Form things *****/
-.result {
+.stepper {
     padding: 5rem 0;
+}
+
+.step:not(:first-child) {
+    margin-top: 5rem; /* To give step > 1 a margin top */
 }
 
 .step-header {
@@ -140,6 +144,12 @@ body {
 
 .seperator::after {
     margin-left: 2rem;
+}
+
+.result-table {
+    border: 2px solid #21D840;
+    border-radius: 10px;
+    margin: 0 auto;
 }
 
 /***** Media Queries *****/
