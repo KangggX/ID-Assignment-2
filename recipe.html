@@ -43,14 +43,14 @@
                 </div>
                 <form class="recipe-box">
                     <div class="d-flex align-items-center flex-sm-column text-start">
-                        <input type="text" id="queryname" name="queryname" placeholder="Name (E.g. Pasta)">
+                        <input type="text" id="queryname" name="queryname" value="" placeholder="Name (E.g. Pasta)">
                     </div>
 
                     <div class="seperator">OR</div>
-                    <input type="text" id="queryname" name="queryname" placeholder="Ready Time(minutes e.g. 20)(Optional)"><br><br>
+                    <input type="text" id="querytime" name="querytime" value="" placeholder="Ready Time(minutes e.g. 20)(Optional)"><br><br>
 
                     <select name="querycuisine" id="querycuisine">
-                        <option value="" disabled selected>Cuisine</option>
+                        <option value="">Cuisine</option>
                         <option value="African">African</option>
                         <option value="American">American</option>
                         <option value="British">British</option>
@@ -59,6 +59,7 @@
                         <option value="French">French</option>
                         <option value="German">German</option>
                         <option value="Indian">Indian</option>
+                        <option value="Italian">Italian</option>
                         <option value="Japanese">Japanese</option>
                         <option value="Jewish">Jewish</option>
                         <option value="Korean">Korean</option>
@@ -69,7 +70,7 @@
                     </select><br><br>
 
                     <select name="querytype" id="querytype">
-                        <option value="" disabled selected>Meal Type</option>
+                        <option value="">Meal Type</option>
                         <option value="main course">Main Course</option>
                         <option value="side dish">Side Dish</option>
                         <option value="dessert">Dessert</option>
@@ -87,7 +88,7 @@
                     </select><br><br>
 
                     <select name="querydiet" id="querydiet">
-                        <option value="" disabled selected>Diet Choice (Optional)</option>
+                        <option value="">Diet Choice (Optional)</option>
                         <option value="Gluten Free">Gluten Free</option>
                         <option value="Ketogenic">Ketogenic</option>
                         <option value="Vegetarian">Vegetarian</option>
@@ -101,7 +102,7 @@
                     </select><br><br>
 
                     <select name="queryintolerance" id="queryintolerance">
-                        <option value="" disabled selected>Intolerance (Optional)</option>
+                        <option value="">Intolerance (Optional)</option>
                         <option value="Dairy">Dairy</option>
                         <option value="Egg">Egg</option>
                         <option value="Gluten">Gluten</option>
