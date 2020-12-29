@@ -147,10 +147,14 @@ body {
 }
 
 .result-table {
-    width: calc(100% - 20vw);
+    display: inline-block;
     border: 2px solid #21D840;
     border-radius: 10px;
     margin: 0 auto;
+}
+
+.result-body {
+    max-height: 50vh;
 }
 
 /***** Media Queries *****/
