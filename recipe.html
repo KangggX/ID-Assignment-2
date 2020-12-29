@@ -43,82 +43,96 @@
                         <div>Fill in the form below and click "Submit" to get started</div>
                     </div>
                     <form class="recipe-box">
-                        <div class="d-flex align-items-center flex-sm-column text-start">
+                        <div class="d-flex justify-content-center text-start">
                             <input type="text" id="queryname" name="queryname" value="" placeholder="Name (E.g. Pasta)">
                         </div>
     
                         <div class="seperator">OR</div>
-                        <input type="text" id="querytime" name="querytime" value="" placeholder="Ready Time(minutes e.g. 20)(Optional)"><br><br>
-    
-                        <select name="querycuisine" id="querycuisine">
-                            <option value="">Cuisine</option>
-                            <option value="African">African</option>
-                            <option value="American">American</option>
-                            <option value="British">British</option>
-                            <option value="Chinese">Chinese</option>
-                            <option value="European">European</option>
-                            <option value="French">French</option>
-                            <option value="German">German</option>
-                            <option value="Indian">Indian</option>
-                            <option value="Italian">Italian</option>
-                            <option value="Japanese">Japanese</option>
-                            <option value="Jewish">Jewish</option>
-                            <option value="Korean">Korean</option>
-                            <option value="Mexican">Mexican</option>
-                            <option value="Spanish">Spanish</option>
-                            <option value="Thai">Thai</option>
-                            <option value="Vietnamese">Vietnamese</option>
-                        </select><br><br>
-    
-                        <select name="querytype" id="querytype">
-                            <option value="">Meal Type</option>
-                            <option value="main course">Main Course</option>
-                            <option value="side dish">Side Dish</option>
-                            <option value="dessert">Dessert</option>
-                            <option value="appetizer">Appetizer</option>
-                            <option value="salad">Salad</option>
-                            <option value="bread">Bread</option>
-                            <option value="breakfast">Breakfast</option>
-                            <option value="soup">Soup</option>
-                            <option value="beverage">Beverage</option>
-                            <option value="sauce">Sauce</option>
-                            <option value="marinade">Marinade</option>
-                            <option value="fingerfood">Fingerfood</option>
-                            <option value="snack">Snack</option>
-                            <option value="drink">Drink</option>
-                        </select><br><br>
-    
-                        <select name="querydiet" id="querydiet">
-                            <option value="">Diet Choice (Optional)</option>
-                            <option value="Gluten Free">Gluten Free</option>
-                            <option value="Ketogenic">Ketogenic</option>
-                            <option value="Vegetarian">Vegetarian</option>
-                            <option value="Lacto-Vegetarian">Lacto-Vegetarian</option>
-                            <option value="Ovo-Vegetarian">Ovo-Vegetarian</option>
-                            <option value="Vegan">Vegan</option>
-                            <option value="Pescetarian">Pescetarian</option>
-                            <option value="Paleo">Paleo</option>
-                            <option value="Primal">Primal</option>
-                            <option value="Whole30">Whole30</option>
-                        </select><br><br>
-    
-                        <select name="queryintolerance" id="queryintolerance">
-                            <option value="">Intolerance (Optional)</option>
-                            <option value="Dairy">Dairy</option>
-                            <option value="Egg">Egg</option>
-                            <option value="Gluten">Gluten</option>
-                            <option value="Grain">Grain</option>
-                            <option value="Peanut">Peanut</option>
-                            <option value="Seafood">Seafood</option>
-                            <option value="Sesame">Sesame</option>
-                            <option value="Shellfish">Shellfish</option>
-                            <option value="Soy">Soy</option>
-                            <option value="Sulfite">Sulfite</option>
-                            <option value="Tree Nut">Tree Nut</option>
-                            <option value="Wheat">Wheat</option>
-                        </select><br><br>
-    
-                        <input type="submit" id="querysubmit" value="Submit">
+
+                        <div class="d-flex justify-content-center text-start">
+                            <input type="text" id="querytime" name="querytime" value="" placeholder="Ready Time(minutes e.g. 20)(Optional)">
+                        </div>
+                        
+                        <div class="d-flex justify-content-center text-start">
+                            <select name="querycuisine" id="querycuisine">
+                                <option value="">Cuisine</option>
+                                <option value="African">African</option>
+                                <option value="American">American</option>
+                                <option value="British">British</option>
+                                <option value="Chinese">Chinese</option>
+                                <option value="European">European</option>
+                                <option value="French">French</option>
+                                <option value="German">German</option>
+                                <option value="Indian">Indian</option>
+                                <option value="Italian">Italian</option>
+                                <option value="Japanese">Japanese</option>
+                                <option value="Jewish">Jewish</option>
+                                <option value="Korean">Korean</option>
+                                <option value="Mexican">Mexican</option>
+                                <option value="Spanish">Spanish</option>
+                                <option value="Thai">Thai</option>
+                                <option value="Vietnamese">Vietnamese</option>
+                            </select>
+                        </div>
+                        
+                        <div class="d-flex justify-content-center text-start">
+                            <select name="querytype" id="querytype">
+                                <option value="">Meal Type</option>
+                                <option value="main course">Main Course</option>
+                                <option value="side dish">Side Dish</option>
+                                <option value="dessert">Dessert</option>
+                                <option value="appetizer">Appetizer</option>
+                                <option value="salad">Salad</option>
+                                <option value="bread">Bread</option>
+                                <option value="breakfast">Breakfast</option>
+                                <option value="soup">Soup</option>
+                                <option value="beverage">Beverage</option>
+                                <option value="sauce">Sauce</option>
+                                <option value="marinade">Marinade</option>
+                                <option value="fingerfood">Fingerfood</option>
+                                <option value="snack">Snack</option>
+                                <option value="drink">Drink</option>
+                            </select>
+                        </div>
+                        
+                        <div class="d-flex justify-content-center text-start">
+                            <select name="querydiet" id="querydiet">
+                                <option value="">Diet Choice (Optional)</option>
+                                <option value="Gluten Free">Gluten Free</option>
+                                <option value="Ketogenic">Ketogenic</option>
+                                <option value="Vegetarian">Vegetarian</option>
+                                <option value="Lacto-Vegetarian">Lacto-Vegetarian</option>
+                                <option value="Ovo-Vegetarian">Ovo-Vegetarian</option>
+                                <option value="Vegan">Vegan</option>
+                                <option value="Pescetarian">Pescetarian</option>
+                                <option value="Paleo">Paleo</option>
+                                <option value="Primal">Primal</option>
+                                <option value="Whole30">Whole30</option>
+                            </select>
+                        </div>
+                        
+                        <div class="d-flex justify-content-center text-start">
+                            <select name="queryintolerance" id="queryintolerance">
+                                <option value="">Intolerance (Optional)</option>
+                                <option value="Dairy">Dairy</option>
+                                <option value="Egg">Egg</option>
+                                <option value="Gluten">Gluten</option>
+                                <option value="Grain">Grain</option>
+                                <option value="Peanut">Peanut</option>
+                                <option value="Seafood">Seafood</option>
+                                <option value="Sesame">Sesame</option>
+                                <option value="Shellfish">Shellfish</option>
+                                <option value="Soy">Soy</option>
+                                <option value="Sulfite">Sulfite</option>
+                                <option value="Tree Nut">Tree Nut</option>
+                                <option value="Wheat">Wheat</option>
+                            </select>
+                        </div>
+                        
+                        <div class="d-flex justify-content-center text-start">
+                            <input type="submit" id="querysubmit" value="Submit">
+                        </div>
+                        
                     </form>
                 </div>
                 
@@ -128,10 +142,7 @@
                         <div>Select one of the following recipes below</div>
                     </div>
 
-                    <div class="result-table">
-                        <div class="result-header">
-
-                        </div>
+                    <div class="result-table d-flex flex-column p-3">
                         <div class="result-body">
 
                         </div>
