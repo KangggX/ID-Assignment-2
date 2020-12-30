@@ -28,6 +28,7 @@ $("#querysubmit").click(function(e) {
     }
     
     e.preventDefault();
+
     if (qName.length == 0 && qCuisine.length == 0) {
         console.log("Error");
     } else {
@@ -55,8 +56,11 @@ $("#querysubmit").click(function(e) {
             
             };
 
+            $(window).scrollTop(1500); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
+
             $(".result-body div").click(function(e) {
                 var idIndex = $(".result-body div").index(this); //Get the index position of the item clicked
+                console.log(this);
                 var recipeInformation = {
                     "url": `https://api.spoonacular.com/recipes/${idHolder[idIndex]}/information?apiKey=a863c4b81ffa46ce882d936d36181f86`,
                     "method": "GET",
