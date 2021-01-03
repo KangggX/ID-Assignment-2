@@ -30,6 +30,7 @@ $("#querysubmit").click(function(e) {
     e.preventDefault();
 
     if (qName.length == 0 && qCuisine.length == 0) {
+        $(document).scrollTop(800);
         console.log("Error");
     } else {
         var searchRecipeSettings = {
@@ -56,7 +57,7 @@ $("#querysubmit").click(function(e) {
             
             };
 
-            $(window).scrollTop(1500); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
+            $(document).scrollTop(1500); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
 
             $(".result-body div").click(function(e) {
                 var idIndex = $(".result-body div").index(this); //Get the index position of the item clicked
@@ -72,6 +73,19 @@ $("#querysubmit").click(function(e) {
 
                 $.ajax(recipeInformation).done(function (response) {
                     console.log(response);    
+                    $(".information-body").empty(); //Clear all contents when user selects a recipe
+
+                    for (var i = 0; i < response.extendedIngredients.length; i++) {
+                        $(".information-body").append(
+                            `<div>${response.extendedIngredients[i].original}</div>`
+                        )
+                    }
+
+                    for (var i = 0; i < response.analyzedInstructions[0].steps.length; i++) {
+                        $(".information-body").append(
+                            `<div>${response.analyzedInstructions[0].steps[i].step}</div>`
+                        )
+                    }
                 });
             });
             
