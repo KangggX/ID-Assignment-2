@@ -77,7 +77,7 @@ $("#querysubmit").click(function(e) {
 
                     for (var i = 0; i < information.extendedIngredients.length; i++) {
                         $(".information-body").append(
-                            `<div>${information.extendedIngredients[i].original}</div>`
+                            `<div class="data">${information.extendedIngredients[i].original}</div>`
                         )
                     }
 
@@ -87,7 +87,7 @@ $("#querysubmit").click(function(e) {
                         )
                     }
 
-                    $(window).scrollTop(2200); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
+                    $(window).scrollTop(2500); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
                 });
             });
             

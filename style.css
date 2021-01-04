@@ -154,7 +154,20 @@ body {
 }
 
 .result-body .data {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
     padding: 0 5rem;
+}
+
+.information-body .data {
+    text-align: left;
+    padding: 1rem 0;
+    border-bottom: 1px dashed #21D840;
+}
+
+.information-body .data:first-child {
+    padding-top: 0;
 }
 
 .result-body, .information-body {
