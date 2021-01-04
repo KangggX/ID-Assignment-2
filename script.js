@@ -49,7 +49,7 @@ $("#querysubmit").click(function(e) {
                 idHolder.push(recipe.results[i].id); //Obtain all the recipe IDs
 
                 $(".result-body").append(
-                    `<div id="data-${i}" class="d-flex flex-column align-items-center mb-5" style="padding: 0 5rem;">
+                    `<div class="data" class="d-flex flex-column align-items-center mb-5">
                         <img class="img-fluid" src="${recipe.results[i].image}"><span class="fs-5 fw-bold">${recipe.results[i].title}</span>
                     </div>`
                 );
@@ -59,7 +59,7 @@ $("#querysubmit").click(function(e) {
 
             $(document).scrollTop(1500); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
 
-            $(".result-body div").click(function(e) {
+            $(".result-body div").click(function() {
                 var idIndex = $(".result-body div").index(this); //Get the index position of the item clicked
                 console.log(this);
                 var recipeInformation = {
@@ -71,21 +71,23 @@ $("#querysubmit").click(function(e) {
                     },
                 };
 
-                $.ajax(recipeInformation).done(function (response) {
-                    console.log(response);    
+                $.ajax(recipeInformation).done(function (information) {
+                    console.log(information);    
                     $(".information-body").empty(); //Clear all contents when user selects a recipe
 
-                    for (var i = 0; i < response.extendedIngredients.length; i++) {
+                    for (var i = 0; i < information.extendedIngredients.length; i++) {
                         $(".information-body").append(
-                            `<div>${response.extendedIngredients[i].original}</div>`
+                            `<div>${information.extendedIngredients[i].original}</div>`
                         )
                     }
 
-                    for (var i = 0; i < response.analyzedInstructions[0].steps.length; i++) {
+                    for (var i = 0; i < information.analyzedInstructions[0].steps.length; i++) {
                         $(".information-body").append(
-                            `<div>${response.analyzedInstructions[0].steps[i].step}</div>`
+                            `<div>${information.analyzedInstructions[0].steps[i].step}</div>`
                         )
                     }
+
+                    $(window).scrollTop(2200); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
                 });
             });
             

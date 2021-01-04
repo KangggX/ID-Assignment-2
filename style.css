@@ -153,8 +153,12 @@ body {
     margin: 0 auto;
 }
 
+.result-body .data {
+    padding: 0 5rem;
+}
+
 .result-body, .information-body {
-    max-height: 50vh;
+    max-height: 100vh;
     max-width: 500px;
 }
 
