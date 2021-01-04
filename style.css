@@ -163,15 +163,19 @@ body {
 .information-body .data {
     text-align: left;
     padding: 1rem 0;
-    border-bottom: 1px dashed #21D840;
+    border-bottom: 2px dashed #21D840;
 }
 
 .information-body .data:first-child {
     padding-top: 0;
 }
 
+.information-body .data:last-child {
+    border-bottom: 1px solid #21D840;
+}
+
 .result-body, .information-body {
-    max-height: 100vh;
+    max-height: 500px;
     max-width: 500px;
 }
 
