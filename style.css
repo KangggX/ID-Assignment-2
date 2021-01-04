@@ -186,6 +186,10 @@ body {
         max-width: 320px;
     }
 
+    .result-body .data {
+        padding: 0 2rem;
+    }
+ 
     
 }
 
