@@ -24,7 +24,7 @@ $("#querysubmit").click(function(e) {
     if ($("#querytime").val() == "") { //In order to prevent error 404 from happening if value is empty
         qTime = "";
     } else {
-        qTime = `&maxReadyTime=${qTime}`;
+        qTime = `&maxReadyTime=${$("#querytime").val()}`;
     }
     
     e.preventDefault();
