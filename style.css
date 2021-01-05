@@ -1,4 +1,4 @@
-*, ::before, ::after {
+*, *:before, *:after {
     box-sizing: border-box;
 }
 
@@ -19,6 +19,7 @@ body {
   
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -157,7 +158,13 @@ body {
     display: flex;
     flex-direction: column;
     margin-bottom: 2rem;
-    padding: 0 5rem;
+    padding: 1rem 5rem;
+}
+
+.result-body .data:hover {
+    background-color: rgb(0 0 0 / 0.1);
+    filter: brightness(0.9);
+    cursor: pointer;
 }
 
 .information-body .data {
@@ -170,8 +177,16 @@ body {
     padding-top: 0;
 }
 
-.information-body .data:last-child {
-    border-bottom: 1px solid #21D840;
+.information-body .list-instruction {
+    margin: 2rem 0;
+}
+
+.list-instruction .box-instruction {
+    margin-bottom: 1rem;
+}
+
+.list-instruction span {
+    margin-right: 1rem;
 }
 
 .result-body, .information-body {
