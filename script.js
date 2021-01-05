@@ -73,21 +73,22 @@ $("#querysubmit").click(function(e) {
 
                 $.ajax(recipeInformation).done(function (information) {
                     console.log(information);    
-                    $(".information-body").empty(); //Clear all contents when user selects a recipe
+                    $(".information-body .list-ingredient").empty(); //Clear all contents when user selects a recipe
+                    $(".information-body .list-instruction").empty(); //Clear all contents when user selects a recipe
 
                     for (var i = 0; i < information.extendedIngredients.length; i++) {
-                        $(".information-body").append(
+                        $(".information-body .list-ingredient").append(
                             `<div class="data">${information.extendedIngredients[i].original}</div>`
                         )
                     }
 
                     for (var i = 0; i < information.analyzedInstructions[0].steps.length; i++) {
-                        $(".information-body").append(
-                            `<div>${information.analyzedInstructions[0].steps[i].step}</div>`
+                        $(".information-body .list-instruction").append(
+                            `<div class="box-instruction"><span>${i + 1}</span>${information.analyzedInstructions[0].steps[i].step}</div>`
                         )
                     }
 
-                    $(window).scrollTop(2500); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
+                    $(window).scrollTop(2280); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
                 });
             });
             
