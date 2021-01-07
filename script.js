@@ -53,8 +53,6 @@ $("#querysubmit").click(function(e) {
                         <img class="img-fluid" src="${recipe.results[i].image}"><span class="fs-5 fw-bold">${recipe.results[i].title}</span>
                     </div>`
                 );
-                
-            
             };
 
             $(document).scrollTop(1500); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
@@ -84,7 +82,7 @@ $("#querysubmit").click(function(e) {
 
                     for (var i = 0; i < information.analyzedInstructions[0].steps.length; i++) {
                         $(".information-body .list-instruction").append(
-                            `<div class="box-instruction"><span>${i + 1}</span>${information.analyzedInstructions[0].steps[i].step}</div>`
+                            `<div class="box-instruction"><div class="step-instruction">${i + 1}</div>${information.analyzedInstructions[0].steps[i].step}</div>`
                         )
                     }
 
