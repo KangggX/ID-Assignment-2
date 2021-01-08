@@ -13,23 +13,24 @@ $(document).scroll(function () {
 });
 
 $("#querysubmit").click(function(e) {
+    e.preventDefault();
+
     var qName = $("#queryname").val();
     var qTime;
     var qCuisine = $("#querycuisine").val();
     var qType = $("#querytype").val();
     var qDiet = $("#querydiet").val();
     var qIntolerance = $("#queryintolerance").val();
-    var idHolder =[];
+    var idHolder =[]; //Creates an array/list to hold recipe IDs. If submission button is clicked again, current list will be cleared for newer IDs.
 
     if ($("#querytime").val() == "") { //In order to prevent error 404 from happening if value is empty
         qTime = "";
     } else {
         qTime = `&maxReadyTime=${$("#querytime").val()}`;
     }
-    
-    e.preventDefault();
 
-    if (qName.length == 0 && qCuisine.length == 0) {
+    if (qName.length == 0 && qTime.length == 0 && qCuisine.length == 0 && qType.length == 0 && qDiet.length == 0 && qIntolerance.length == 0) {
+        //Validation check
         $(document).scrollTop(800);
         console.log("Error");
     } else {
@@ -44,7 +45,7 @@ $("#querysubmit").click(function(e) {
 
         $.ajax(searchRecipeSettings).done(function (recipe) {
             console.log(recipe);
-            $(".result-body").empty(); //Clear all contents when user click submit
+            $(".result-body").empty(); //Clear all inner DOM contents when user click submit
             for (var i = 0; i < recipe.results.length; i++) {
                 idHolder.push(recipe.results[i].id); //Obtain all the recipe IDs
 
@@ -60,6 +61,7 @@ $("#querysubmit").click(function(e) {
             $(".result-body div").click(function() {
                 var idIndex = $(".result-body div").index(this); //Get the index position of the item clicked
                 console.log(this);
+                console.log(idHolder);
                 var recipeInformation = {
                     "url": `https://api.spoonacular.com/recipes/${idHolder[idIndex]}/information?apiKey=a863c4b81ffa46ce882d936d36181f86`,
                     "method": "GET",
@@ -71,8 +73,8 @@ $("#querysubmit").click(function(e) {
 
                 $.ajax(recipeInformation).done(function (information) {
                     console.log(information);    
-                    $(".information-body .list-ingredient").empty(); //Clear all contents when user selects a recipe
-                    $(".information-body .list-instruction").empty(); //Clear all contents when user selects a recipe
+                    $(".information-body .list-ingredient").empty(); //Clear all inner DOM contents when user selects a recipe
+                    $(".information-body .list-instruction").empty(); //Clear all inner DOM contents when user selects a recipe
 
                     for (var i = 0; i < information.extendedIngredients.length; i++) {
                         $(".information-body .list-ingredient").append(
