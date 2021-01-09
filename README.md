@@ -1,5 +1,7 @@
 # Assignment-2
 Assignment 2 repos
+[Github repository](https://github.com/KangggX/Assignment-2)
+[Github webpage link](https://kangggx.github.io/Assignment-2/)
 
 # EzyRecipe
 
@@ -70,7 +72,9 @@ In addition, you should mention in this section how your project looks and works
 
 You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
 ### Bugs and/or Problems discovered
-During testing, I found out that despite no results were found from the form I have submitted, there were no error message displayed and the code still continue to run.
+1. During testing, I found out that despite no results were found from the form I have submitted, there were no error message displayed and the code still continue to run.
+
+2. Later in my project I realised that I made an error to the way I have validated my forms using Javascript. The error I made was that users will not be able to submit the form if they only fill the "Meal Type", "Ready Time", "Diet Choice", and/or "Intolerance" input unless they have the "Name" and/or "Cuisine" input filled in.
 
 
 ## Credits
