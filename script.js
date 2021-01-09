@@ -37,7 +37,7 @@ $("#querysubmit").click(function(e) {
     } else {
         $("#form-validation").empty();
         var searchRecipeSettings = {
-            "url": `https://api.spoonacular.com/recipes/complexSearch?apiKey=a863c4b81ffa46ce882d936d36181f86&number=100&instructionsRequired=true&query=${qName}&cuisine=${qCuisine}&diet=${qDiet}&intolerances=${qIntolerance}&type=${qType}${qTime}`,
+            "url": `https://api.spoonacular.com/recipes/complexSearch?apiKey=da54b56ccea047c9b380d1cd3f79b1e6&number=100&instructionsRequired=true&query=${qName}&cuisine=${qCuisine}&diet=${qDiet}&intolerances=${qIntolerance}&type=${qType}${qTime}`,
             "method": "GET",
             "timeout": 0,
             "headers": {
@@ -64,14 +64,14 @@ $("#querysubmit").click(function(e) {
                     );
                 };
 
-                $(document).scrollTop(1625); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
+                $(document).scrollTop(1791); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
 
                 $(".result-body div").click(function() {
                     var idIndex = $(".result-body div").index(this); //Get the index position of the item clicked
                     console.log(this);
                     console.log(idHolder);
                     var recipeInformation = {
-                        "url": `https://api.spoonacular.com/recipes/${idHolder[idIndex]}/information?apiKey=a863c4b81ffa46ce882d936d36181f86&includeNutrition=true`,
+                        "url": `https://api.spoonacular.com/recipes/${idHolder[idIndex]}/information?apiKey=da54b56ccea047c9b380d1cd3f79b1e6&includeNutrition=true`,
                         "method": "GET",
                         "timeout": 0,
                         "headers": {
@@ -83,16 +83,21 @@ $("#querysubmit").click(function(e) {
                         console.log(information);    
                         $(".stepper:nth-of-type(4)").show(); //Makes the display to default value
                         $(".list#stats").empty(); //Clear all inner DOM contents when user selects a recipe/new recipe
-                        $(".list#ingredient").empty(); //Clear all inner DOM contents when user selects a recipe/new recipe
-                        $(".list#instruction").empty(); //Clear all inner DOM contents when user selects a recipe/new recipe
+                        $(".list#stats-basic").empty(); //Clear all inner DOM contents when user selects a recipe/new recipe
+                        $(".list#stats-nutrients").empty(); //Clear all inner DOM contents when user selects a recipe/new recipe
 
-                        $(".list#stats").append(
+                        $(".list#stats-basic").append(
                             `
                             <div class="list-title">Basic Information</div>
                             <div><b>Name:</b> ${information.title}</div>
                             <div><b>Number of serving(s):</b> ${information.servings}</div>
                             <div><b>Ready Time:</b> ${information.readyInMinutes}mins</div>
                             <div><b>Rating:</b> ${information.spoonacularScore}/100</div>
+                            `
+                        );
+
+                        $(".list#stats-nutrients").append(
+                            `
                             <div class="list-title" style="margin-top: 2rem;">Nutrition</div>
                             <div><b>Calories:</b> ${information.nutrition.nutrients[5].amount}kcal</div>
                             <div><b>Cholesterol:</b> ${information.nutrition.nutrients[6].amount}mg</div>
@@ -100,7 +105,7 @@ $("#querysubmit").click(function(e) {
                             <div><b>Fat:</b> ${information.nutrition.nutrients[1].amount}g</div>
                             <div><b>Saturated Fat:</b> ${information.nutrition.nutrients[2].amount}g</div>
                             <div><b>Sugar:</b> ${information.nutrition.nutrients[5].amount}g</div>
-                            `
+                            `  
                         );
 
                         $(".list#ingredient").append(`<div class="list-title">Ingredients</div>`);
@@ -117,7 +122,7 @@ $("#querysubmit").click(function(e) {
                             )
                         }
 
-                        $(window).scrollTop(2432); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
+                        $(window).scrollTop(2672); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
                     });
                 });
             }
