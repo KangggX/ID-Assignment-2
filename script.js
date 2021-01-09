@@ -112,7 +112,7 @@ $("#querysubmit").click(function(e) {
                         )
                     }
 
-                    $(window).scrollTop(2500); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
+                    $(window).scrollTop(2432); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
                 });
             });
             
