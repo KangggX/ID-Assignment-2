@@ -12,7 +12,8 @@ EzyRecipe have it all convered.
 I made the website with 2 different colours, green and white, which look simple and easy to the eye with an aim to make all content easy to read and understand. The website is mainly for those who want to prepare meals within a certain period of time (e.g. 20 minutes) or with specific filters to cater to their needs. Having said that, an example of a user who can use this website is a housewife who can make use of the variety of recipes available to prepare meals for her family members to enjoy.
 
 - As a housewife, I want to search for a recipe that contains Pasta, so that I can prepare a meal with my son's favourite ingredient, Pasta.
-- As a student, I wan to search for recipes that are easy to make, so that I can prepare a meal that does not consume much of my time.
+- As a student, I want to search for recipes that can be prepared in around 20 minutes, so that I can prepare a meal just in time before leaving house for school.
+- As an employee, I want to search for recipes that is from the Korean cuisine, so that I can satisfy my cravings for Korean food.
 
 Provide us insights about your design process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
@@ -31,6 +32,9 @@ In this section, you should go over the different parts of your project, and des
 ### Existing Features
 - Feature 1 - Navigation bar, easy for users to navigate to the "Get Recipe" page to start finding their desired recipe.
 - Feature 2 - Multiple forms available to be filled up to get a filtered list of recipe.
+- Feature 3 - Included in the API are the images of each recipe searched, thus users can have a clearer look on how each recipe looks like.
+- Feature 4 - Detailed information about the recipe servings as well as the nutrition information.
+- Feature 5 - Easy to understand ingredients needed and instructions.
 
 In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
@@ -46,24 +50,28 @@ In this section, you should mention all of the languages, frameworks, libraries,
     - The project uses **JQuery** to simplify DOM manipulation.
 
 - [Bootstrap](https://getbootstrap.com/)
-    - Bootstrap is used to simplify the whole process of styling the website
+    - **Bootstrap** is used to simplify the whole process of styling the website
+
+- [Spoonacular API](https://spoonacular.com/food-api/docs#Get-Recipe-Information)
+    - The **Spoonacular API** is used to gather all information about the recipe searched for. This is the main "brain" of the website.
 
 
 ## Testing
 
 For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
 
-1. Contact form:
-    1. Go to the "Contact Us" page
+1. Get Recipe form:
+    1. Go to the "Get Recipe" page
     2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
+    3. Try to submit the form with something random and verify that an error message appears
+    4. Try to submit the form with all inputs valid and verify that a success message appears or an error message if no results are found
 
 In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
 
 You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+### Bugs and/or Problems discovered
+During testing, I found out that despite no results were found from the form I have submitted, there were no error message displayed and the code still continue to run.
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
 ## Credits
 
@@ -71,7 +79,7 @@ If this section grows too long, you may want to split it off into a separate fil
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 
 ### Media
-- The photos used in this site were obtained from [Pixabay](https://pixabay.com)
+- The photos used in this site were obtained from [Pixabay](https://pixabay.com) and provided from the API itself
 
 ### Acknowledgements
 
