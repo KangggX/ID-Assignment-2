@@ -32,8 +32,10 @@ $("#querysubmit").click(function(e) {
     if (qName.length == 0 && qTime.length == 0 && qCuisine.length == 0 && qType.length == 0 && qDiet.length == 0 && qIntolerance.length == 0) {
         //Validation check
         $(document).scrollTop(800);
+        $("#form-validation").text("Please enter at least 1 value");
         console.log("Error");
     } else {
+        $("#form-validation").empty();
         var searchRecipeSettings = {
             "url": `https://api.spoonacular.com/recipes/complexSearch?apiKey=a863c4b81ffa46ce882d936d36181f86&number=100&instructionsRequired=true&query=${qName}&cuisine=${qCuisine}&diet=${qDiet}&intolerances=${qIntolerance}&type=${qType}${qTime}`,
             "method": "GET",
@@ -45,18 +47,19 @@ $("#querysubmit").click(function(e) {
 
         $.ajax(searchRecipeSettings).done(function (recipe) {
             console.log(recipe);
+            $(".stepper:nth-child(3)").show(); //Makes the display to default value
             $(".result-body").empty(); //Clear all inner DOM contents when user click submit
             for (var i = 0; i < recipe.results.length; i++) {
                 idHolder.push(recipe.results[i].id); //Obtain all the recipe IDs
 
-                $(".result-body").append(
+                $(".result-body").append( //Appending the recipe name and image
                     `<div class="data" class="d-flex flex-column align-items-center mb-5">
                         <img class="img-fluid" src="${recipe.results[i].image}"><span class="fs-5 fw-bold">${recipe.results[i].title}</span>
                     </div>`
                 );
             };
 
-            $(document).scrollTop(1500); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
+            $(document).scrollTop(1625); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
 
             $(".result-body div").click(function() {
                 var idIndex = $(".result-body div").index(this); //Get the index position of the item clicked
@@ -73,22 +76,25 @@ $("#querysubmit").click(function(e) {
 
                 $.ajax(recipeInformation).done(function (information) {
                     console.log(information);    
+                    $(".stepper:nth-child(4)").show(); //Makes the display to default value
                     $(".information-body .list-ingredient").empty(); //Clear all inner DOM contents when user selects a recipe
                     $(".information-body .list-instruction").empty(); //Clear all inner DOM contents when user selects a recipe
 
+                    $(".information-body .list-ingredient").append(`<div class="list-title">Ingredients</div>`);
                     for (var i = 0; i < information.extendedIngredients.length; i++) {
                         $(".information-body .list-ingredient").append(
                             `<div class="data">${information.extendedIngredients[i].original}</div>`
                         )
                     }
 
+                    $(".information-body .list-instruction").append(`<div class="list-title">Instruction(s)</div>`);
                     for (var i = 0; i < information.analyzedInstructions[0].steps.length; i++) {
                         $(".information-body .list-instruction").append(
                             `<div class="box-instruction"><div class="step-instruction">${i + 1}</div>${information.analyzedInstructions[0].steps[i].step}</div>`
                         )
                     }
 
-                    $(window).scrollTop(2280); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
+                    $(window).scrollTop(2500); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
                 });
             });
             
