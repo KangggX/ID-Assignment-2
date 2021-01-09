@@ -54,7 +54,7 @@
                         <div class="seperator">OR</div>
 
                         <div class="d-flex justify-content-center mb-4">
-                            <input type="text" id="querytime" name="querytime" value="" placeholder="Ready Time(minutes e.g. 20)(Optional)">
+                            <input type="number" id="querytime" name="querytime" value="" placeholder="Ready Time(minutes e.g. 20)(Optional)">
                         </div>
                         
                         <div class="d-flex justify-content-center mb-4">
@@ -158,8 +158,8 @@
                         <div>Select one of the following recipes below</div>
                     </div>
 
-                    <div class="result-table overflow-scroll p-3">
-                        <div class="result-body">
+                    <div class="result-table">
+                        <div class="result-body p-3">
 
                         </div>
                     </div>
@@ -169,17 +169,19 @@
                 
         <section class="stepper text-center" style="display: none;">
             <div class="container">
-                <div class="step">
+                <div class="step d-flex flex-column">
                     <div class="step-header fw-bold">
                         <div class="fs-1">Enjoy cooking!</div>
                     </div>
 
-                    <div class="result-table overflow-scroll p-3">
-                        <div class="information-body" style="text-align: left;">
-                            <div class="list-ingredient">
+                    <div class="result-table"></div>
+
+                    <div class="result-table">
+                        <div class="information-body p-3" style="text-align: left;">
+                            <div class="list" id="ingredient">
                                 
                             </div>
-                            <div class="list-instruction">
+                            <div class="list" id="instruction">
                                 
                             </div>
                         </div>
