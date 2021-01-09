@@ -34,7 +34,7 @@ In this section, you should go over the different parts of your project, and des
 - Feature 2 - Multiple forms available to be filled up to get a filtered list of recipe.
 - Feature 3 - Included in the API are the images of each recipe searched, thus users can have a clearer look on how each recipe looks like.
 - Feature 4 - Detailed information about the recipe servings as well as the nutrition information.
-- Feature 5 - Easy to understand ingredients needed and instructions.
+- Feature 5 - Easy to understand ingredients list and instructions list.
 
 In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
