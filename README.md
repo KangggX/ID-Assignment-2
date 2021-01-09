@@ -30,7 +30,7 @@ In this section, you should go over the different parts of your project, and des
  
 ### Existing Features
 - Feature 1 - Navigation bar, easy for users to navigate to the "Get Recipe" page to start finding their desired recipe.
-- ...
+- Feature 2 - Multiple forms available to be filled up to get a filtered list of recipe.
 
 In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
