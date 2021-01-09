@@ -150,14 +150,17 @@ body {
 
 .result-table {
     display: inline-block;
-    border: 2px solid #21D840;
+    text-align: left;
+    border: 3px solid #21D840;
     border-radius: 10px;
     margin: 0 auto;
+    overflow-y: scroll;
 }
 
 .result-body .data {
     display: flex;
     flex-direction: column;
+    text-align: center;
     margin-bottom: 2rem;
     padding: 1rem 5rem;
 }
@@ -169,7 +172,7 @@ body {
 }
 
 .information-body .data {
-    text-align: left;
+    text-transform: capitalize;
     padding: 1rem 0;
     border-bottom: 2px dashed #21D840;
 }
@@ -178,7 +181,7 @@ body {
     padding-top: 0;
 }
 
-.information-body .list-instruction {
+.information-body #instruction {
     margin: 2rem 0;
 }
 
@@ -186,7 +189,7 @@ body {
     display: flex;
     color: #21D840;
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
 }
 
@@ -199,15 +202,15 @@ body {
     margin-left: 0.5rem;
 }
 
-.list-instruction .box-instruction {
+.list .box-instruction {
     position: relative;
     border: 2px solid #21D840;
     border-radius: 5px;
     margin: 1rem 0;
-    padding: 20px;
+    padding: 25px 20px;
 }
 
-.list-instruction .step-instruction {
+.list .step-instruction {
     display: inline-block;
     position: absolute;
     left: 0;
