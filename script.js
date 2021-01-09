@@ -66,7 +66,7 @@ $("#querysubmit").click(function(e) {
                 console.log(this);
                 console.log(idHolder);
                 var recipeInformation = {
-                    "url": `https://api.spoonacular.com/recipes/${idHolder[idIndex]}/information?apiKey=a863c4b81ffa46ce882d936d36181f86`,
+                    "url": `https://api.spoonacular.com/recipes/${idHolder[idIndex]}/information?apiKey=a863c4b81ffa46ce882d936d36181f86&includeNutrition=true`,
                     "method": "GET",
                     "timeout": 0,
                     "headers": {
@@ -76,20 +76,38 @@ $("#querysubmit").click(function(e) {
 
                 $.ajax(recipeInformation).done(function (information) {
                     console.log(information);    
-                    $(".stepper:nth-child(4)").show(); //Makes the display to default value
-                    $(".information-body .list-ingredient").empty(); //Clear all inner DOM contents when user selects a recipe
-                    $(".information-body .list-instruction").empty(); //Clear all inner DOM contents when user selects a recipe
+                    $(".stepper:nth-of-type(4)").show(); //Makes the display to default value
+                    $(".list#stats").empty(); //Clear all inner DOM contents when user selects a recipe/new recipe
+                    $(".list#ingredient").empty(); //Clear all inner DOM contents when user selects a recipe/new recipe
+                    $(".list#instruction").empty(); //Clear all inner DOM contents when user selects a recipe/new recipe
 
-                    $(".information-body .list-ingredient").append(`<div class="list-title">Ingredients</div>`);
-                    for (var i = 0; i < information.extendedIngredients.length; i++) {
-                        $(".information-body .list-ingredient").append(
+                    $(".list#stats").append(
+                        `
+                        <div class="list-title">Basic Information</div>
+                        <div>Name: ${information.title}</div>
+                        <div>Number of serving(s): ${information.servings}</div>
+                        <div>Ready Time: ${information.readyInMinutes}mins</div>
+                        <div>Rating: ${information.spoonacularScore}/100</div>
+                        <div class="list-title" style="margin-top: 2rem;">Nutrition</div>
+                        <div>Calories: ${information.nutrition.nutrients[5].amount}kcal</div>
+                        <div>Cholesterol: ${information.nutrition.nutrients[6].amount}mg</div>
+                        <div>Carbohydrates: ${information.nutrition.nutrients[3].amount}g</div>
+                        <div>Fat: ${information.nutrition.nutrients[1].amount}g</div>
+                        <div>Saturated Fat: ${information.nutrition.nutrients[2].amount}g</div>
+                        <div>Sugar: ${information.nutrition.nutrients[5].amount}g</div>
+                        `
+                    );
+
+                    $(".list#ingredient").append(`<div class="list-title">Ingredients</div>`);
+                    for (var i = 0; i < information.extendedIngredients.length; i++) { //Appending ingredient list using for loop
+                        $(".list#ingredient").append(
                             `<div class="data">${information.extendedIngredients[i].original}</div>`
                         )
                     }
 
-                    $(".information-body .list-instruction").append(`<div class="list-title">Instruction(s)</div>`);
-                    for (var i = 0; i < information.analyzedInstructions[0].steps.length; i++) {
-                        $(".information-body .list-instruction").append(
+                    $(".list#instruction").append(`<div class="list-title">Instruction(s)</div>`);
+                    for (var i = 0; i < information.analyzedInstructions[0].steps.length; i++) { //Appending instruction list using for loop
+                        $(".list#instruction").append(
                             `<div class="box-instruction"><div class="step-instruction">${i + 1}</div>${information.analyzedInstructions[0].steps[i].step}</div>`
                         )
                     }
