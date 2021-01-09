@@ -47,75 +47,80 @@ $("#querysubmit").click(function(e) {
 
         $.ajax(searchRecipeSettings).done(function (recipe) {
             console.log(recipe);
-            $(".stepper:nth-child(3)").show(); //Makes the display to default value
-            $(".result-body").empty(); //Clear all inner DOM contents when user click submit
-            for (var i = 0; i < recipe.results.length; i++) {
-                idHolder.push(recipe.results[i].id); //Obtain all the recipe IDs
 
-                $(".result-body").append( //Appending the recipe name and image
-                    `<div class="data" class="d-flex flex-column align-items-center mb-5">
-                        <img class="img-fluid" src="${recipe.results[i].image}"><span class="fs-5 fw-bold">${recipe.results[i].title}</span>
-                    </div>`
-                );
-            };
+            if (recipe.totalResults == "0") {
+                alert("No result found");
+            } else {
 
-            $(document).scrollTop(1625); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
+                $(".stepper:nth-child(3)").show(); //Makes the display to default value
+                $(".result-body").empty(); //Clear all inner DOM contents when user click submit
+                for (var i = 0; i < recipe.results.length; i++) {
+                    idHolder.push(recipe.results[i].id); //Obtain all the recipe IDs
 
-            $(".result-body div").click(function() {
-                var idIndex = $(".result-body div").index(this); //Get the index position of the item clicked
-                console.log(this);
-                console.log(idHolder);
-                var recipeInformation = {
-                    "url": `https://api.spoonacular.com/recipes/${idHolder[idIndex]}/information?apiKey=a863c4b81ffa46ce882d936d36181f86&includeNutrition=true`,
-                    "method": "GET",
-                    "timeout": 0,
-                    "headers": {
-                      "Cookie": "__cfduid=d2164e84c3a575422c310609a8f51a4c31608527722"
-                    },
+                    $(".result-body").append( //Appending the recipe name and image
+                        `<div class="data" class="d-flex flex-column align-items-center mb-5">
+                            <img class="img-fluid" src="${recipe.results[i].image}"><span class="fs-5 fw-bold">${recipe.results[i].title}</span>
+                        </div>`
+                    );
                 };
 
-                $.ajax(recipeInformation).done(function (information) {
-                    console.log(information);    
-                    $(".stepper:nth-of-type(4)").show(); //Makes the display to default value
-                    $(".list#stats").empty(); //Clear all inner DOM contents when user selects a recipe/new recipe
-                    $(".list#ingredient").empty(); //Clear all inner DOM contents when user selects a recipe/new recipe
-                    $(".list#instruction").empty(); //Clear all inner DOM contents when user selects a recipe/new recipe
+                $(document).scrollTop(1625); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
 
-                    $(".list#stats").append(
-                        `
-                        <div class="list-title">Basic Information</div>
-                        <div>Name: ${information.title}</div>
-                        <div>Number of serving(s): ${information.servings}</div>
-                        <div>Ready Time: ${information.readyInMinutes}mins</div>
-                        <div>Rating: ${information.spoonacularScore}/100</div>
-                        <div class="list-title" style="margin-top: 2rem;">Nutrition</div>
-                        <div>Calories: ${information.nutrition.nutrients[5].amount}kcal</div>
-                        <div>Cholesterol: ${information.nutrition.nutrients[6].amount}mg</div>
-                        <div>Carbohydrates: ${information.nutrition.nutrients[3].amount}g</div>
-                        <div>Fat: ${information.nutrition.nutrients[1].amount}g</div>
-                        <div>Saturated Fat: ${information.nutrition.nutrients[2].amount}g</div>
-                        <div>Sugar: ${information.nutrition.nutrients[5].amount}g</div>
-                        `
-                    );
+                $(".result-body div").click(function() {
+                    var idIndex = $(".result-body div").index(this); //Get the index position of the item clicked
+                    console.log(this);
+                    console.log(idHolder);
+                    var recipeInformation = {
+                        "url": `https://api.spoonacular.com/recipes/${idHolder[idIndex]}/information?apiKey=a863c4b81ffa46ce882d936d36181f86&includeNutrition=true`,
+                        "method": "GET",
+                        "timeout": 0,
+                        "headers": {
+                          "Cookie": "__cfduid=d2164e84c3a575422c310609a8f51a4c31608527722"
+                        },
+                    };
 
-                    $(".list#ingredient").append(`<div class="list-title">Ingredients</div>`);
-                    for (var i = 0; i < information.extendedIngredients.length; i++) { //Appending ingredient list using for loop
-                        $(".list#ingredient").append(
-                            `<div class="data">${information.extendedIngredients[i].original}</div>`
-                        )
-                    }
+                    $.ajax(recipeInformation).done(function (information) {
+                        console.log(information);    
+                        $(".stepper:nth-of-type(4)").show(); //Makes the display to default value
+                        $(".list#stats").empty(); //Clear all inner DOM contents when user selects a recipe/new recipe
+                        $(".list#ingredient").empty(); //Clear all inner DOM contents when user selects a recipe/new recipe
+                        $(".list#instruction").empty(); //Clear all inner DOM contents when user selects a recipe/new recipe
 
-                    $(".list#instruction").append(`<div class="list-title">Instruction(s)</div>`);
-                    for (var i = 0; i < information.analyzedInstructions[0].steps.length; i++) { //Appending instruction list using for loop
-                        $(".list#instruction").append(
+                        $(".list#stats").append(
+                            `
+                            <div class="list-title">Basic Information</div>
+                            <div><b>Name:</b> ${information.title}</div>
+                            <div><b>Number of serving(s):</b> ${information.servings}</div>
+                            <div><b>Ready Time:</b> ${information.readyInMinutes}mins</div>
+                            <div><b>Rating:</b> ${information.spoonacularScore}/100</div>
+                            <div class="list-title" style="margin-top: 2rem;">Nutrition</div>
+                            <div><b>Calories:</b> ${information.nutrition.nutrients[5].amount}kcal</div>
+                            <div><b>Cholesterol:</b> ${information.nutrition.nutrients[6].amount}mg</div>
+                            <div><b>Carbohydrates:</b> ${information.nutrition.nutrients[3].amount}g</div>
+                            <div><b>Fat:</b> ${information.nutrition.nutrients[1].amount}g</div>
+                            <div><b>Saturated Fat:</b> ${information.nutrition.nutrients[2].amount}g</div>
+                            <div><b>Sugar:</b> ${information.nutrition.nutrients[5].amount}g</div>
+                            `
+                        );
+
+                        $(".list#ingredient").append(`<div class="list-title">Ingredients</div>`);
+                        for (var i = 0; i < information.extendedIngredients.length; i++) { //Appending ingredient list using for loop
+                            $(".list#ingredient").append(
+                                `<div class="data">${information.extendedIngredients[i].original}</div>`
+                            )
+                        }
+
+                        $(".list#instruction").append(`<div class="list-title">Instruction(s)</div>`);
+                        for (var i = 0; i < information.analyzedInstructions[0].steps.length; i++) { //Appending instruction list using for loop
+                            $(".list#instruction").append(
                             `<div class="box-instruction"><div class="step-instruction">${i + 1}</div>${information.analyzedInstructions[0].steps[i].step}</div>`
-                        )
-                    }
+                            )
+                        }
 
-                    $(window).scrollTop(2432); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
+                        $(window).scrollTop(2432); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
+                    });
                 });
-            });
-            
-        });
+            }
+        });       
     }
 })
