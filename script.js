@@ -82,9 +82,10 @@ $("#querysubmit").click(function(e) {
                     $.ajax(recipeInformation).done(function (information) {
                         console.log(information);    
                         $(".stepper:nth-of-type(4)").show(); //Makes the display to default value
-                        $(".list#stats").empty(); //Clear all inner DOM contents when user selects a recipe/new recipe
                         $(".list#stats-basic").empty(); //Clear all inner DOM contents when user selects a recipe/new recipe
                         $(".list#stats-nutrients").empty(); //Clear all inner DOM contents when user selects a recipe/new recipe
+                        $(".list#ingredient").empty(); //Clear all inner DOM contents when user selects a recipe/new recipe
+                        $(".list#instruction").empty(); //Clear all inner DOM contents when user selects a recipe/new recipe
 
                         $(".list#stats-basic").append(
                             `
