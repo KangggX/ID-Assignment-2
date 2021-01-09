@@ -30,6 +30,7 @@
             <div class="container text-center">
                 <div class="fw-bold fs-1" style="color: #fff; margin-bottom: 4rem;">
                     <span>Search for Recipes</span>
+                    <div></div>
                 </div>
                 
             </div>
@@ -40,7 +41,10 @@
                 <div class="step">
                     <div class="step-header fw-bold">
                         <div class="fs-1">Step 1</div>
-                        <div class="fs-5">Fill in the form below and click "Submit" to get started</div>
+                        <div class="fs-5">
+                            Fill in at least ONE information below and click "Submit" to get started
+                            <div id="form-validation"></div>
+                        </div>
                     </div>
                     <form class="recipe-box">
                         <div class="d-flex justify-content-center">
@@ -146,7 +150,7 @@
             </div>
         </section>
 
-        <section class="stepper text-center">
+        <section class="stepper text-center" style="display: none;">
             <div class="container">
                 <div class="step">
                     <div class="step-header fw-bold">
@@ -163,7 +167,7 @@
             </div>
         </section>
                 
-        <section class="stepper text-center">
+        <section class="stepper text-center" style="display: none;">
             <div class="container">
                 <div class="step">
                     <div class="step-header fw-bold">
@@ -172,8 +176,12 @@
 
                     <div class="result-table overflow-scroll p-3">
                         <div class="information-body" style="text-align: left;">
-                            <div class="list-ingredient"></div>
-                            <div class="list-instruction"></div>
+                            <div class="list-ingredient">
+                                
+                            </div>
+                            <div class="list-instruction">
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
