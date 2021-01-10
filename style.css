@@ -94,13 +94,12 @@ body {
 .box {
     min-height: 145px;
     border-radius: 1rem;
-    padding: 1rem;
+    padding: 1rem 2rem;
     box-shadow: 0 0 20px 0px rgb(0 0 0 / 0.1);
 }
 
 /***** Recipe Form things *****/
 .stepper {
-    min-height: calc(100vh - 74px);
     padding: 5rem 0;
 }
 
