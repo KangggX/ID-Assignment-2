@@ -6,21 +6,15 @@ Assignment 2 repos
 # EzyRecipe
 
 EzyRecipe aims to reduce the time taken to prepare a full-course meal within 15 minutes with a large variety of cuisines such as 
-American, British and Korean cuisine. EzyRecipe caters to all types of people. Be it being a vegetarian or having an intolerance to lactose,
-EzyRecipe have it all convered.
+American, British, Korean cuisine and many more. EzyRecipe caters to all types of people. Be it being a vegetarian or having an intolerance to lactose, EzyRecipe have it all convered.
  
 ## Design Process
 
-I made the website with 2 different colours, green and white, which look simple and easy to the eye with an aim to make all content easy to read and understand. The website is mainly for those who want to prepare meals within a certain period of time (e.g. 20 minutes) or with specific filters to cater to their needs. Having said that, an example of a user who can use this website is a housewife who can make use of the variety of recipes available to prepare meals for her family members to enjoy.
+I made the website with 2 different colours, green and white, which look simple and easy to the eye with an aim to make all content easy to read and understand. The website is mainly for those who want to prepare meals within a certain period of time (e.g. 20 minutes) or with specific filters to cater to their needs. Not only are there many cuisines to choose from, users who have allergies to a certain type of food/ingredient or a different diet choice can also have them filtered out. Having said that, an example of a user who can use this website is a housewife who can make use of the variety of recipes available to prepare meals for her family members to enjoy.
 
 - As a housewife, I want to search for a recipe that contains Pasta, so that I can prepare a meal with my son's favourite ingredient, Pasta.
 - As a student, I want to search for recipes that can be prepared in around 20 minutes, so that I can prepare a meal just in time before leaving house for school.
 - As an employee, I want to search for recipes that is from the Korean cuisine, so that I can satisfy my cravings for Korean food.
-
-Provide us insights about your design process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
-
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
 
 This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. 
 These files should themselves either be included as a pdf file in the project itself (in an separate directory)
@@ -68,9 +62,9 @@ For any scenarios that have not been automated, test the user stories manually a
     3. Try to submit the form with something random and verify that an error message appears
     4. Try to submit the form with all inputs valid and verify that a success message appears or an error message if no results are found
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+### How it look and work on different browsers and screen sizes
+1. With the help of Bootstrap, catering to different browsers and screen sizes have been made easier. Upon shrinking down the screen size, users are still expected to view the contents easily without any obstruction and the system will still function as intended.
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
 ### Bugs and/or Problems discovered
 1. During testing, I found out that despite no results were found from the form I have submitted, there were no error message displayed and the code still continue to run.
 
