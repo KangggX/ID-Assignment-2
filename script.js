@@ -5,10 +5,10 @@ $(document).scroll(function () {
 
     if ($(this).scrollTop() > nav.height()) {
         $(".navbar .container").removeClass("py-3");
-        $(".nav-link, .navbar-brand").css("color", "rgba(0, 0, 0, .9)")
+        $(".nav-link, .navbar-brand").css("color", "rgba(0, 0, 0, .9)");
     } else {
         $(".navbar .container").addClass("py-3");
-        $(".nav-link, .navbar-brand").css("color", "")
+        $(".nav-link, .navbar-brand").css("color", "");
     }
 });
 
@@ -32,8 +32,7 @@ $("#querysubmit").click(function(e) {
     if (qName.length == 0 && qTime.length == 0 && qCuisine.length == 0 && qType.length == 0 && qDiet.length == 0 && qIntolerance.length == 0) {
         //Validation check
         $(document).scrollTop(800);
-        $("#form-validation").text("Please enter at least 1 value");
-        console.log("Error");
+        alert("Please fill in at least 1 input");
     } else {
         $("#form-validation").empty();
         var searchRecipeSettings = {
@@ -120,7 +119,7 @@ $("#querysubmit").click(function(e) {
                         for (var i = 0; i < information.analyzedInstructions[0].steps.length; i++) { //Appending instruction list using for loop
                             $(".list#instruction").append(
                             `<div class="box-instruction"><div class="step-instruction">${i + 1}</div>${information.analyzedInstructions[0].steps[i].step}</div>`
-                            )
+                            );
                         }
 
                         $(window).scrollTop(2672); //Move the user window directly to the result. Reason why it is placed here is so that the scroll can happen once all content have been loaded.
@@ -129,4 +128,4 @@ $("#querysubmit").click(function(e) {
             }
         });       
     }
-})
+});
