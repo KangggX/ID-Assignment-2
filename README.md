@@ -1,4 +1,4 @@
-# Assignment-2
+w3# Assignment-2
 Assignment 2 repos
 - [Github repository](https://github.com/KangggX/Assignment-2)
 - [Github webpage link](https://kangggx.github.io/Assignment-2/)
@@ -16,31 +16,22 @@ I made the website with 2 different colours, green and white, which look simple 
 - As a student, I want to search for recipes that can be prepared in around 20 minutes, so that I can prepare a meal just in time before leaving house for school.
 - As an employee, I want to search for recipes that is from the Korean cuisine, so that I can satisfy my cravings for Korean food.
 
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. 
-These files should themselves either be included as a pdf file in the project itself (in an separate directory)
-Include the Adobe XD wireframe as a folder. You can include the XD share url. 
 [Adobe XD Wireframe](https://xd.adobe.com/view/471d1f6d-1b7e-4a70-9801-b3aff50f69d6-124e/)
 
 ## Features
-
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
  
 ### Existing Features
 - Feature 1 - Navigation bar, easy for users to navigate to the "Get Recipe" page to start finding their desired recipe.
 - Feature 2 - Multiple forms available to be filled up to get a filtered list of recipe.
 - Feature 3 - Included in the API are the images of each recipe searched, thus users can have a clearer look on how each recipe looks like.
-- Feature 4 - Detailed information about the recipe servings as well as the nutrition information.
+- Feature 4 - Detailed information about the recipe servings as well as the nutritional information.
 - Feature 5 - Easy to understand ingredients list and instructions list.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
 ### Features Left to Implement
 - Dark mode
 - The total cost of all ingredients needed to prepare the meal
 
 ## Technologies Used
-
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
 
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
@@ -53,8 +44,6 @@ In this section, you should mention all of the languages, frameworks, libraries,
 
 
 ## Testing
-
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
 
 1. Get Recipe form:
     1. Go to the "Get Recipe" page
