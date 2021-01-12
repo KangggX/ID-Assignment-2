@@ -1,4 +1,4 @@
-w3# Assignment-2
+# Assignment-2
 Assignment 2 repos
 - [Github repository](https://github.com/KangggX/Assignment-2)
 - [Github webpage link](https://kangggx.github.io/Assignment-2/)
