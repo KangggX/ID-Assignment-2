@@ -1,7 +1,7 @@
 # Assignment-2
 Assignment 2 repos
-- [Github repository](https://github.com/KangggX/Assignment-2)
-- [Github webpage link](https://kangggx.github.io/Assignment-2/)
+- [Github repository](https://github.com/KangggX/ID-Assignment-2)
+- [Github webpage link](https://kangggx.github.io/ID-Assignment-2/)
 
 # EzyRecipe
 
